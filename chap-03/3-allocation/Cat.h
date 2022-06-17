@@ -13,6 +13,14 @@ class Cat
 public:
     bool operator==(const Cat& other) const { return _name == other._name; }
 
+    Cat(std::string name) : _name(name){
+        std::cout << "I have a cat named " << name << "."<< std::endl;
+    }
+
+    ~Cat() {
+        std::cout << "cat named "<<_name<<" is died."<< std::endl;
+    }
+
 private:
-    std::string _name = "Felix";
+    std::string _name;
 };

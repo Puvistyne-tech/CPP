@@ -1,8 +1,9 @@
 #include <iostream>
 
-struct Test
+class Test
 {
-    Test(int v)
+    public:
+    Test(std::string v)
         : value { v }
     {
         std::cout << "Constructor was called with " << v << "." << std::endl;
@@ -14,10 +15,10 @@ struct Test
         std::cout << "Copy constructor was called." << std::endl;
     }
 
-    int value = 0;
+    std::string value ;
 };
 
-Test create_test(int value)
+Test create_test(std::string value)
 {
     Test result { value };
     return result;
@@ -25,7 +26,9 @@ Test create_test(int value)
 
 int main()
 {
-    Test test = create_test(3);
+    // Test test = create_test("3");
+    // Test t=test;
+    Test test = Test { Test { Test { "3" } } };
     std::cout << test.value << std::endl;
 
     return 0;
